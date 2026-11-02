@@ -1,0 +1,41 @@
+name: Build ACI
+
+on:
+  push:
+    branches: [ main, master ]
+    tags: [ 'v*' ]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Java 21 einrichten
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+
+      - name: Plugin bauen
+        run: mvn -B -ntp package
+
+      - name: Jar als Download bereitstellen
+        uses: actions/upload-artifact@v4
+        with:
+          name: ACI-plugin
+          path: target/ACI-*.jar
+
+      # Bei einem Tag wie v1.0.0 wird automatisch ein Release mit der Jar erstellt
+      - name: Release erstellen
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: target/ACI-*.jar
+          generate_release_notes: true
