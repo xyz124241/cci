@@ -1,0 +1,24 @@
+# ACI - Settings
+resource-pack:
+  # Automatically send the pack when a player joins
+  send-on-join: true
+  # true = players who decline the pack get kicked
+  required: false
+  prompt: "&6Please accept the ACI resource pack to see the custom items!"
+
+  # Your own download URL (if you host the pack somewhere yourself). Empty = the plugin hosts it itself.
+  url: ""
+  # SHA-1 of the pack (only needed if you set your own URL above; optional)
+  sha1: ""
+
+  # Built-in mini web server that serves resourcepack.zip.
+  # IMPORTANT: if you leave url empty, "host.public-address" below MUST be set to your server's
+  # public IP or domain, and the port must be open (TCP) in your firewall/host's panel - otherwise
+  # players can never download the pack and every custom item shows the black/purple missing texture.
+  host:
+    enabled: true
+    # This port must be open (TCP) in your firewall/at your host.
+    port: 8123
+    # Your server's public IP or domain (e.g. 123.45.67.89 or mc.myserver.com). Required unless you
+    # set resource-pack.url above instead.
+    public-address: ""

@@ -1,0 +1,84 @@
+# Names and lore support MiniMessage (<gradient:#ff0000:#ffd000>Text</gradient>, <#ff8800>, <bold> ...)
+# as well as old &-codes (&6, &l, &#ff8800).
+# Default items. Copied to plugins/ACI/items.yml on first start.
+# Everything here can also be comfortably edited in-game via /aci.
+#
+# texture: name of a texture from the resource pack, or empty ("") to keep the base item's own
+#          vanilla look (recommended for potions and plain items).
+# potion-type: only used when material is POTION/SPLASH_POTION/LINGERING_POTION/TIPPED_ARROW;
+#              the vanilla potion type to show (e.g. fire_resistance), or empty for a plain water bottle.
+# effects:
+#   type:    name of the effect (e.g. SPEED, STRENGTH, FIRE_RESISTANCE)
+#   level:   1 = level I, 2 = level II, ...
+#   slot:    MAIN_HAND, OFF_HAND, HELMET, CHESTPLATE, LEGGINGS, BOOTS, ANYWHERE
+#   seconds: 0 = only while the item is in that slot (constantly refreshed)
+#            >0 = effect with this length (e.g. 480 = 8 minutes), refreshed while the item is in that slot
+items:
+  orange_crystal:
+    name: "<bold><gradient:#ff3d00:#ffd000>Fire Crystal</gradient></bold>"
+    material: AMETHYST_SHARD
+    texture: orange_crystal
+    potion-type: ""
+    lore: []
+    effects:
+      - type: fire_resistance
+        level: 1
+        slot: OFF_HAND
+        seconds: 480
+    recipes: []
+  yellow_crystal:
+    name: "<bold><gradient:#fff176:#ff9800>Power Crystal</gradient></bold>"
+    material: AMETHYST_SHARD
+    texture: yellow_crystal
+    potion-type: ""
+    lore: []
+    effects:
+      - type: strength
+        level: 2
+        slot: OFF_HAND
+        seconds: 0
+    recipes: []
+  blue_crystal:
+    name: "<bold><gradient:#00e5ff:#2962ff>Speed Crystal</gradient></bold>"
+    material: AMETHYST_SHARD
+    texture: blue_crystal
+    potion-type: ""
+    lore: []
+    effects:
+      - type: speed
+        level: 2
+        slot: OFF_HAND
+        seconds: 0
+    recipes: []
+  purple_crystal:
+    name: "<bold><gradient:#e040fb:#651fff>Purple Crystal</gradient></bold>"
+    material: AMETHYST_SHARD
+    texture: purple_crystal
+    potion-type: ""
+    lore: []
+    effects: []
+    recipes: []
+  white_crystal:
+    name: "<bold><gradient:#ffffff:#9fa8da>White Crystal</gradient></bold>"
+    material: AMETHYST_SHARD
+    texture: white_crystal
+    potion-type: ""
+    lore: []
+    effects: []
+    recipes: []
+  gray_crystal:
+    name: "<bold><gradient:#e0e0e0:#757575>Gray Crystal</gradient></bold>"
+    material: AMETHYST_SHARD
+    texture: gray_crystal
+    potion-type: ""
+    lore: []
+    effects: []
+    recipes: []
+  black_crystal:
+    name: "<bold><gradient:#78909c:#263238>Black Crystal</gradient></bold>"
+    material: AMETHYST_SHARD
+    texture: black_crystal
+    potion-type: ""
+    lore: []
+    effects: []
+    recipes: []
